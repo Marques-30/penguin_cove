@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Penguin Cove Locations</title>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    body {
+  background-image: url('pics/brew.jpeg');
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+</style>
+</head>
+
+<body>
+    <div class="navbar">
+      <a href="home.html">Home</a>
+      <a class="active" href="map.html">Location</a>
+      <a href="contact.html">Contact</a>
+      <a href="drinks.html">Drinks</a>
+    </div>
+    <table style="width:100%">
+        <tr>
+        <td>
+    <div class="options-box" style="max-width: 25%;">
+        <h1 style="text-align: left;">Past Bar Locations</h1>
+        <hr>
+        <div class="app" id="app">
+            <div class="list" id="list">
+                <ul class="results" id="results" data-bind="foreach: filteredList">
+                    <li class="place" id="place">
+                        <button class="place" id="place" data-bind="text: Title, click: bounce"></button>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h2><i>Places coming soon</i></h2>
+                <hr>
+                <p>
+                    <ul style="color: white; font-style: italic;">
+                        <li>Ocean Beach</li>
+                        <li>Golden Gate Park</li>
+                        <li>Dolores Park</li>
+                    </ul>
+                    <form action="/action_page.php">
+                    <label for="w3review"><b>Any reccommandtions / suggestions:</b></label><br><br>
+                    <textarea id="w3review" name="w3review" rows="4" cols="50" style="width: 175px;"></textarea>
+                      <br><br>
+                      <input type="submit" value="Submit">
+                    </form>
+                </p>
+            </div>
+        </div>
+    </div>
+    </td>
+    <td>
+    <div id="map" style="max-width: 73%; max-height: 90%"></div>
+    </td>
+    </tr>
+    </table>
+    <script src="libs/jquery.min.js"></script>
+    <script src="libs/knockout-3.4.0.js"></script>
+    <script src="script.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBR0LVBgxSe9wmnS_txqD5BipB9gMRtKrg&v=3&callback=initMap" onerror="errorMessage()"></script>
+</body>
+
+</html>
